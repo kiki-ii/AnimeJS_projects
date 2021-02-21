@@ -1,0 +1,32 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+section {
+  position: relative;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #0e1623;
+  overflow: hidden;
+}
+
+section .text {
+  position: relative;
+  font-size: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  color: #00fe77;
+  -webkit-box-reflect:below -0.46rem linear-gradient(transparent, #0004); 
+  /* -webkit-box-reflect :  Not support IE / Firefox  */
+}
+
+section .text span {
+  position: relative;
+  display: inline-block;
+}

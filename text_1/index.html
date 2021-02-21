@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur commodi voluptatibus nobis, architecto sint enim dolorem explicabo id eius iure? Soluta, accusantium. Labore fugit porro aliquid commodi natus! Nesciunt voluptates, blanditiis velit animi cumque fuga, vel alias totam esse harum minus praesentium autem excepturi. Tempore sunt, aspernatur ullam aliquam voluptatum quos quas earum ad temporibus. Enim accusantium quos possimus numquam nam fugiat. Eligendi reiciendis dolore praesentium excepturi numquam commodi temporibus suscipit unde! Debitis sint asperiores laborum rerum molestias facere ipsam repellendus aspernatur eligendi fugiat iusto porro praesentium, ducimus impedit pariatur id ad est, eveniet in nostrum et accusamus! Quis velit omnis perspiciatis eos repellendus inventore rem aliquid minus neque dolore consectetur placeat, illum atque nostrum, adipisci quos similique. Eum, qui ut odit illum nihil cumque aliquid animi ullam magnam id! Voluptatum possimus asperiores accusantium error ratione pariatur beatae placeat voluptatibus nesciunt deserunt voluptatem omnis vel corrupti sint mollitia suscipit ipsa necessitatibus sequi, repellat reprehenderit quia? Doloremque tempore ullam architecto maiores pariatur facilis porro non quisquam est in quo placeat sequi ipsum nemo aspernatur, repellendus magni sapiente? Asperiores, soluta enim! Ex, eligendi? Facilis, error iste! Maxime qui dolores aliquam at similique iure aut. Atque modi rerum facere error sit aspernatur inventore!</p>
+  </section>
+
+  <script src="./anime.min.js"></script>
+  <script>
+    // Now, Split text into letters.
+
+    const text = document.querySelector('.text');
+    text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+    const animation = anime.timeline({
+      targets : '.text span',
+      easing : 'easeInOutExpo',
+      loop : true,
+    });
+
+    animation
+    .add({
+      rotate: function(){
+        return anime.random(-360,360)
+      },
+      translateX: function(){
+        return anime.random(-500,500)
+      },
+      translateY: function(){
+        return anime.random(-500,500)
+      },
+      duration : 5000,
+      delay : anime.stagger(20),
+    })
+
+    
+    .add({
+      rotate: 0,
+      translateX: 0,
+      translateY: 0,
+      duration : 5000,
+      delay : anime.stagger(20),
+    })
+  </script>
+</body>
+</html>
